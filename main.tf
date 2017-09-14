@@ -4,8 +4,8 @@ resource "aws_route53_record" "default" {
   type    = "A"
 
   alias {
-    name                   = "${var.elb_dns_name}"
-    zone_id                = "${var.elb_zone_id}"
+    name                   = "${var.target_dns_name}"
+    zone_id                = "${var.target_zone_id}"
     evaluate_target_health = "${var.evaluate_target_health}"
   }
 }
