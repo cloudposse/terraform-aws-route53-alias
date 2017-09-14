@@ -4,8 +4,6 @@ Terraform Module to that implements "vanity" host names (e.g. `brand.com`) as `A
 
 ## Usage
 
-# Define www host
-
 This will define a `A` resource record for `www.example.com` as an alias of the `aws_elb.example.dns_name`. 
 
 ```
