@@ -1,3 +1,3 @@
 output "hostname" {
-  value = "${aws_route53_record.default.fqdn}"
+  value = "${aws_route53_record.default.*.fqdn}"
 }

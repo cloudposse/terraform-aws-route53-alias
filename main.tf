@@ -1,6 +1,7 @@
 resource "aws_route53_record" "default" {
+  count   = "${length(var.aliases)}"
   zone_id = "${var.zone_id}"
-  name    = "${var.name}"
+  name    = "${var.aliases[count.index]}"
   type    = "A"
 
   alias {

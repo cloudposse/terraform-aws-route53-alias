@@ -1,5 +1,5 @@
-variable "name" {
-  default = "dns"
+variable "aliases" {
+  type = "list"
 }
 
 variable "zone_id" {}
