@@ -2,7 +2,13 @@ variable "aliases" {
   type = "list"
 }
 
-variable "zone_id" {}
+variable "parent_zone_id" {
+  default = ""
+}
+
+variable "parent_zone_name" {
+  default = ""
+}
 
 variable "target_dns_name" {}
 
