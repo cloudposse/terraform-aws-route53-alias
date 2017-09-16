@@ -22,7 +22,8 @@ module "production_www" {
 |  Name                     |  Default   |  Description                                                                            | Required |
 |:--------------------------|:----------:|:----------------------------------------------------------------------------------------|:--------:|
 | `aliases`                 | `[]`       | List of aliases                                                                         | Yes      |
-| `zone_id`                 | ``         | ID of the hosted zone to contain this record                                            | Yes      |
+| `parent_zone_id`          | ``         | ID of the hosted zone to contain this record  (or specify `parent_zone_name`)           | Yes      |
+| `parent_zone_name`        | ``         | Name of the hosted zone to contain this record (or specify `parent_zone_id`)            | Yes      |
 | `target_dns_name`         | ``         | DNS-name of target resource (e.g. ALB,ELB)                                              | Yes      |
 | `target_zone_id`          | ``         | ID of target resource (e.g. ALB,ELB)                                                    | Yes      |
 | `evaluate_target_health`  | `false`    | Set to true if you want Route 53 to determine whether to respond to DNS queries         | No       |
