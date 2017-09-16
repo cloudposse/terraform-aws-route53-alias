@@ -9,5 +9,3 @@ output "parent_zone_id" {
 output "parent_zone_name" {
   value = "${null_resource.parent.triggers.zone_name}"
 }
-
-
