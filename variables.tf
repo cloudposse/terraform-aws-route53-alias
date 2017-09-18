@@ -1,12 +1,18 @@
-variable "name" {
-  default = "dns"
+variable "aliases" {
+  type = "list"
 }
 
-variable "zone_id" {}
+variable "parent_zone_id" {
+  default = ""
+}
 
-variable "elb_dns_name" {}
+variable "parent_zone_name" {
+  default = ""
+}
 
-variable "elb_zone_id" {}
+variable "target_dns_name" {}
+
+variable "target_zone_id" {}
 
 variable "evaluate_target_health" {
   default = "false"
