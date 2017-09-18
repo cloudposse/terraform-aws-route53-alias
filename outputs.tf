@@ -1,4 +1,4 @@
-output "hostname" {
+output "hostnames" {
   value = "${aws_route53_record.default.*.fqdn}"
 }
 

@@ -1,6 +1,6 @@
 # tf_vanity
 
-Terraform Module to that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to a another Route53 DNS resource record (e.g. ELB/ALB, or CloudFront Distribution).
+Terraform Module that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to an another Route53 DNS resource record (e.g. ELB/ALB, or CloudFront Distribution).
 
 ## Usage
 
@@ -8,7 +8,7 @@ This will define a `A` resource record for `www.example.com` as an alias of the 
 
 ```terraform
 module "production_www" {
-  source          = "git::https://github.com/cloudposse/tf_vanity?ref=master"
+  source          = "git::https://github.com/cloudposse/tf_vanity.git?ref=master"
   aliases         = ["www.example.com.", "static1.cdn.example.com.", "static2.cdn.example.com"]
   parent_zone_id  = "${var.parent_zone_id}"
   target_dns_name = "${aws_elb.example.dns_name}"
