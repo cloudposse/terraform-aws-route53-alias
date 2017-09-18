@@ -10,7 +10,7 @@ This will define a `A` resource record for `www.example.com` as an alias of the 
 module "production_www" {
   source          = "git::https://github.com/cloudposse/tf_vanity?ref=master"
   aliases         = ["www.example.com.", "static1.cdn.example.com.", "static2.cdn.example.com"]
-  parent_zone_id         = "${var.parent_zone_id}"
+  parent_zone_id  = "${var.parent_zone_id}"
   target_dns_name = "${aws_elb.example.dns_name}"
   target_zone_id  = "${aws_elb.example.zone_id}"
 }
@@ -30,6 +30,8 @@ module "production_www" {
 
 ## Outputs
 
-| Name       | Description               |
-|:---------- |:--------------------------|
-| `hostname` | List of DNS-records       |
+| Name               | Description                                    |
+|:------------------ |:-----------------------------------------------|
+| `hostname`         | List of DNS-records                            |
+| `parent_zone_id`   | ID of the hosted zone to contain this record   |
+| `parent_zone_name` | Name of the hosted zone to contain this record |
