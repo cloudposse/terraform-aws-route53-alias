@@ -20,7 +20,7 @@ data "aws_route53_zone" "parent_by_zone_name" {
 }
 
 resource "aws_route53_record" "default" {
-  count   = "${length(var.aliases)}"
+  count   = "${length(compact(var.aliases))}"
   zone_id = "${null_resource.parent.triggers.zone_id}"
   name    = "${var.aliases[count.index]}"
   type    = "A"
