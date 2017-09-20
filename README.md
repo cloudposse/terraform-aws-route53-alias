@@ -1,6 +1,7 @@
-# tf_vanity
+# terraform-aws-route53-alias
 
-Terraform Module that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to an another Route53 DNS resource record (e.g. ELB/ALB, or CloudFront Distribution).
+Terraform Module to that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to another Route53 DNS resource record (e.g. ELB/ALB, S3 Bucket Endpoint or CloudFront Distribution).
+Unlike `CNAME` records, the synthetic `ALIAS` record works with zone apexes.
 
 ## Usage
 
