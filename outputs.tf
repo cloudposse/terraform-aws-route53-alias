@@ -7,5 +7,5 @@ output "parent_zone_id" {
 }
 
 output "parent_zone_name" {
-  value = "${data.aws_route53_zone.default.*.zone_name}"
+  value = "${data.aws_route53_zone.default.*.name}"
 }
