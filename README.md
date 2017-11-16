@@ -1,4 +1,4 @@
-# terraform-aws-route53-alias [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-route53-alias.svg)](https://travis-ci.org/cloudposse/terraform-aws-route53-alias)
+# terraform-aws-route53-alias [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-route53-alias.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-route53-alias)
 
 Terraform module that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to another Route53 DNS resource record (e.g. ELB/ALB, S3 Bucket Endpoint or CloudFront Distribution).
 Unlike `CNAME` records, the synthetic `ALIAS` record works with zone apexes.
