@@ -1,0 +1,74 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-aws-route53-alias
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "APACHE2"
+
+# Canonical GitHub repo
+github_repo: cloudposse/terraform-aws-route53-alias
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/cloudposse/terraform-aws-route53-alias.svg?branch=master"
+    url: "https://travis-ci.org/cloudposse/terraform-aws-route53-alias"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-aws-route53-alias.svg"
+    url: "https://github.com/cloudposse/terraform-aws-route53-alias/releases/latest"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+
+related:
+  - name: "terraform-aws-route53-cluster-hostname"
+    description: "Terraform module to define a consistent AWS Route53 hostname"
+    url: "https://github.com/cloudposse/terraform-aws-route53-cluster-hostname"
+  - name: "terraform-aws-route53-cluster-zone"
+    description: "Terraform Cluster Domain (e.g. `prod.ourcompany.com`)"
+    url: "https://github.com/cloudposse/terraform-aws-route53-cluster-zone"
+  - name: "terraform-aws-kops-route53"
+    description: "Terraform module to lookup the IAM role associated with `kops` masters, and attach an IAM policy to the role with permissions to modify Route53 record sets"
+    url: "https://github.com/cloudposse/terraform-aws-kops-route53"
+
+# Short description of this project
+description: |-
+  Terraform module that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to another Route53 DNS resource record (e.g. ELB/ALB, S3 Bucket Endpoint or CloudFront Distribution).
+  Unlike `CNAME` records, the synthetic `ALIAS` record works with zone apexes.
+
+# How to use this project
+usage: |-
+  This will define a `A` resource record for `www.example.com` as an alias of the `aws_elb.example.dns_name`.
+
+  ```terraform
+  module "production_www" {
+    source          = "git::https://github.com/cloudposse/terraform-aws-route53-alias.git?ref=master"
+    aliases         = ["www.example.com.", "static1.cdn.example.com.", "static2.cdn.example.com"]
+    parent_zone_id  = "${var.parent_zone_id}"
+    target_dns_name = "${aws_elb.example.dns_name}"
+    target_zone_id  = "${aws_elb.example.zone_id}"
+  }
+  ```
+
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+# Contributors to this project
+contributors:
+  - name: "Erik Osterman"
+    github: "osterman"
+  - name: "Igor Rodionov"
+    github: "goruha"
+  - name: "Andriy Knysh"
+    github: "aknysh"
+  - name: "Vladimir"
+    github: "SweetOps"
