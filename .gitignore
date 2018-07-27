@@ -7,5 +7,5 @@
 .idea
 *.iml
 
-.build-harness
-build-harness
+**/.build-harness
+**/build-harness
