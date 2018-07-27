@@ -5,7 +5,7 @@ data "aws_route53_zone" "default" {
 }
 
 resource "aws_route53_record" "default" {
-  count   = "${length(compact(var.aliases))}"
+  count   = "${var.enabled == "true" ? length(compact(var.aliases)) : 0}"
   zone_id = "${data.aws_route53_zone.default.zone_id}"
   name    = "${element(compact(var.aliases), count.index)}"
   type    = "A"
