@@ -25,3 +25,9 @@ variable "evaluate_target_health" {
   default     = "false"
   description = "Set to true if you want Route 53 to determine whether to respond to DNS queries"
 }
+
+variable "enabled" {
+  type        = "string"
+  default     = "true"
+  description = "Set to false to prevent the module from creating any resources"
+}
