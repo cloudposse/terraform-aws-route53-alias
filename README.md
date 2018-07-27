@@ -28,6 +28,7 @@ module "production_www" {
 | `target_dns_name`        |   ``    | DNS-name of target resource (e.g. ALB,ELB)                                      |   Yes    |
 | `target_zone_id`         |   ``    | ID of target resource (e.g. ALB,ELB)                                            |   Yes    |
 | `evaluate_target_health` | `false` | Set to true if you want Route 53 to determine whether to respond to DNS queries |    No    |
+| `enabled`                | `true` | Set to false to prevent the module from creating any resources                   |    No    |
 
 
 ## Outputs
