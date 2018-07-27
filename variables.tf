@@ -17,3 +17,9 @@ variable "target_zone_id" {}
 variable "evaluate_target_health" {
   default = "false"
 }
+
+variable "enabled" {
+  type        = "string"
+  default     = "true"
+  description = "Set to false to prevent the module from creating any resources"
+}
