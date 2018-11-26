@@ -1,5 +1,5 @@
 data "aws_route53_zone" "default" {
-  count   = "${signum(length(compact(var.aliases)))}"
+  count   = "${var.enabled == "true" ? signum(length(compact(var.aliases))) : 0}"
   zone_id = "${var.parent_zone_id}"
   name    = "${var.parent_zone_name}"
 }
