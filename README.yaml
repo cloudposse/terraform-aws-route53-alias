@@ -7,6 +7,19 @@
 # Name of this project
 name: terraform-aws-route53-alias
 
+# Tags of this project
+tags:
+  - aws
+  - terraform
+  - terraform-modules
+  - networking
+  - route53
+  - alias
+
+# Categories of this project
+categories:
+  - terraform-modules/networking
+
 # Logo for this project
 #logo: docs/logo.png
 
