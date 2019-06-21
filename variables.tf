@@ -1,5 +1,5 @@
 variable "aliases" {
-  type        = "list"
+  type        = list(string)
   description = "List of aliases"
 }
 
@@ -27,7 +27,8 @@ variable "evaluate_target_health" {
 }
 
 variable "enabled" {
-  type        = "string"
+  type        = string
   default     = "true"
   description = "Set to false to prevent the module from creating any resources"
 }
+
