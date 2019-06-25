@@ -1,14 +1,14 @@
 output "hostnames" {
-  value       = aws_route53_record.default.*.fqdn
+  value       = module.route53_alias.hostnames
   description = "List of DNS records"
 }
 
 output "parent_zone_id" {
-  value       = data.aws_route53_zone.default.*.zone_id
+  value       = module.route53_alias.parent_zone_id
   description = "ID of the hosted zone to contain the records"
 }
 
 output "parent_zone_name" {
-  value       = data.aws_route53_zone.default.*.name
+  value       = module.route53_alias.parent_zone_name
   description = "Name of the hosted zone to contain the records"
 }
