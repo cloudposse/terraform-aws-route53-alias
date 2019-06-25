@@ -31,9 +31,9 @@ github_repo: cloudposse/terraform-aws-route53-alias
 
 # Badges to display
 badges:
-  - name: "Build Status"
-    image: "https://travis-ci.org/cloudposse/terraform-aws-route53-alias.svg?branch=master"
-    url: "https://travis-ci.org/cloudposse/terraform-aws-route53-alias"
+  - name: "Codefresh Build Status"
+    image: "https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-aws-route53-alias?type=cf-1"
+    url: "https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d119fda4bb3780bc79a6395"
   - name: "Latest Release"
     image: "https://img.shields.io/github/release/cloudposse/terraform-aws-route53-alias.svg"
     url: "https://github.com/cloudposse/terraform-aws-route53-alias/releases/latest"

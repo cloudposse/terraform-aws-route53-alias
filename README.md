@@ -3,7 +3,7 @@
 
 [![Cloud Posse][logo]](https://cpco.io/homepage)
 
-# terraform-aws-route53-alias [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-route53-alias.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-route53-alias) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-route53-alias.svg)](https://github.com/cloudposse/terraform-aws-route53-alias/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# terraform-aws-route53-alias [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-aws-route53-alias?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d119fda4bb3780bc79a6395) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-route53-alias.svg)](https://github.com/cloudposse/terraform-aws-route53-alias/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform module that implements "vanity" host names (e.g. `brand.com`) as `ALIAS` records to another Route53 DNS resource record (e.g. ELB/ALB, S3 Bucket Endpoint or CloudFront Distribution).
@@ -43,6 +43,11 @@ We literally have [*hundreds of terraform modules*][terraform_modules] that are 
 
 ## Usage
 
+
+**IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/cloudposse/terraform-aws-route53-alias/releases).
+
+
 This will define a `A` resource record for `www.example.com` as an alias of the `aws_elb.example.dns_name`.
 
 ```terraform
@@ -70,26 +75,25 @@ Available targets:
   lint                                Lint terraform code
 
 ```
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aliases | List of aliases | list | - | yes |
-| enabled | Set to false to prevent the module from creating any resources | string | `true` | no |
-| evaluate_target_health | Set to true if you want Route 53 to determine whether to respond to DNS queries | string | `false` | no |
+| aliases | List of aliases | list(string) | - | yes |
+| enabled | Set to false to prevent the module from creating any resources | bool | `true` | no |
+| evaluate_target_health | Set to true if you want Route 53 to determine whether to respond to DNS queries | bool | `false` | no |
 | parent_zone_id | ID of the hosted zone to contain this record  (or specify `parent_zone_name`) | string | `` | no |
 | parent_zone_name | Name of the hosted zone to contain this record (or specify `parent_zone_id`) | string | `` | no |
-| target_dns_name | DNS-name of target resource (e.g. ALB,ELB) | string | - | yes |
-| target_zone_id | ID of target resource (e.g. ALB,ELB) | string | - | yes |
+| target_dns_name | DNS name of target resource (e.g. ALB, ELB) | string | - | yes |
+| target_zone_id | ID of target resource (e.g. ALB, ELB) | string | - | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| hostnames | List of DNS-records |
-| parent_zone_id | ID of the hosted zone to contain this record |
-| parent_zone_name | Name of the hosted zone to contain this record |
+| hostnames | List of DNS records |
+| parent_zone_id | ID of the hosted zone to contain the records |
+| parent_zone_name | Name of the hosted zone to contain the records |
 
 
 
@@ -173,7 +177,7 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 ## Copyright
 
-Copyright © 2017-2018 [Cloud Posse, LLC](https://cpco.io/copyright)
+Copyright © 2017-2019 [Cloud Posse, LLC](https://cpco.io/copyright)
 
 
 
