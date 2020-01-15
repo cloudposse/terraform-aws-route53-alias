@@ -36,3 +36,9 @@ variable "enabled" {
   default     = true
   description = "Set to false to prevent the module from creating any resources"
 }
+
+variable "ipv6_enabled" {
+  type        = bool
+  default     = false
+  description = "Set to true to enable an AAAA DNS record to be set as well as the A record"
+}
