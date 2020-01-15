@@ -16,3 +16,16 @@ resource "aws_route53_record" "default" {
     evaluate_target_health = var.evaluate_target_health
   }
 }
+
+resource "aws_route53_record" "ipv6" {
+  count   = var.enabled && var.ipv6_enabled ? length(compact(var.aliases)) : 0
+  zone_id = data.aws_route53_zone.default[0].zone_id
+  name    = compact(var.aliases)[count.index]
+  type    = "AAAA"
+
+  alias {
+    name                   = var.target_dns_name
+    zone_id                = var.target_zone_id
+    evaluate_target_health = var.evaluate_target_health
+  }
+}
