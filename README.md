@@ -124,6 +124,7 @@ Available targets:
 | ipv6_enabled | Set to true to enable an AAAA DNS record to be set as well as the A record | bool | `false` | no |
 | parent_zone_id | ID of the hosted zone to contain this record  (or specify `parent_zone_name`) | string | `` | no |
 | parent_zone_name | Name of the hosted zone to contain this record (or specify `parent_zone_id`) | string | `` | no |
+| private_zone | Is this a private hosted zone? | bool | `false` | no |
 | target_dns_name | DNS name of target resource (e.g. ALB, ELB) | string | - | yes |
 | target_zone_id | ID of target resource (e.g. ALB, ELB) | string | - | yes |
 
