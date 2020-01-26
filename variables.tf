@@ -15,6 +15,12 @@ variable "parent_zone_name" {
   description = "Name of the hosted zone to contain this record (or specify `parent_zone_id`)"
 }
 
+variable "private_zone" {
+  type        = bool
+  default     = false
+  description = "Is this a private hosted zone?"
+}
+
 variable "target_dns_name" {
   type        = string
   description = "DNS name of target resource (e.g. ALB, ELB)"
