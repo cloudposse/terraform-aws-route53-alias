@@ -48,3 +48,9 @@ variable "ipv6_enabled" {
   default     = false
   description = "Set to true to enable an AAAA DNS record to be set as well as the A record"
 }
+
+variable "allow_overwrite" {
+  type        = bool
+  default     = false
+  description = "Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. false by default. This configuration is not recommended for most environments"
+}
