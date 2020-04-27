@@ -119,6 +119,7 @@ Available targets:
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | aliases | List of aliases | list(string) | - | yes |
+| allow_overwrite | Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. false by default. This configuration is not recommended for most environments | bool | `false` | no |
 | enabled | Set to false to prevent the module from creating any resources | bool | `true` | no |
 | evaluate_target_health | Set to true if you want Route 53 to determine whether to respond to DNS queries | bool | `false` | no |
 | ipv6_enabled | Set to true to enable an AAAA DNS record to be set as well as the A record | bool | `false` | no |
@@ -188,6 +189,10 @@ We deliver 10x the value for a fraction of the cost of a full-time engineer. Our
 ## Slack Community
 
 Join our [Open Source Community][slack] on Slack. It's **FREE** for everyone! Our "SweetOps" community is where you get to talk with others who share a similar vision for how to rollout and manage infrastructure. This is the best place to talk shop, ask questions, solicit feedback, and work together as a community to build totally *sweet* infrastructure.
+
+## Discourse Forums
+
+Participate in our [Discourse Forums][discourse]. Here you'll find answers to commonly asked questions. Most questions will be related to the enormous number of projects we support on our GitHub. Come here to collaborate on answers, find solutions, and get ideas about the products and services we value. It only takes a minute to get started! Just sign in with SSO using your GitHub account.
 
 ## Newsletter
 
@@ -304,6 +309,7 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
   [testimonial]: https://cpco.io/leave-testimonial?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=testimonial
   [office_hours]: https://cloudposse.com/office-hours?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=office_hours
   [newsletter]: https://cpco.io/newsletter?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=newsletter
+  [discourse]: https://ask.sweetops.com/?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=discourse
   [email]: https://cpco.io/email?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=email
   [commercial_support]: https://cpco.io/commercial-support?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=commercial_support
   [we_love_open_source]: https://cpco.io/we-love-open-source?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-aws-route53-alias&utm_content=we_love_open_source
