@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -35,3 +36,4 @@
 | parent\_zone\_id | ID of the hosted zone to contain the records |
 | parent\_zone\_name | Name of the hosted zone to contain the records |
 
+<!-- markdownlint-restore -->
