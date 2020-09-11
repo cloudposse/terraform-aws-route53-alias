@@ -1,16 +1,17 @@
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0, < 0.14.0 |
-| aws | ~> 2.0 |
-| local | ~> 1.2 |
+| terraform | >= 0.12.0 |
+| aws | >= 2.0 |
+| local | >= 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.0 |
+| aws | >= 2.0 |
 
 ## Inputs
 
@@ -35,3 +36,4 @@
 | parent\_zone\_id | ID of the hosted zone to contain the records |
 | parent\_zone\_name | Name of the hosted zone to contain the records |
 
+<!-- markdownlint-restore -->
