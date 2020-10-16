@@ -4,11 +4,11 @@ output "hostnames" {
 }
 
 output "parent_zone_id" {
-  value       = data.aws_route53_zone.default.*.zone_id
+  value       = join("", data.aws_route53_zone.default.*.zone_id)
   description = "ID of the hosted zone to contain the records"
 }
 
 output "parent_zone_name" {
-  value       = data.aws_route53_zone.default.*.name
+  value       = join("", data.aws_route53_zone.default.*.name)
   description = "Name of the hosted zone to contain the records"
 }

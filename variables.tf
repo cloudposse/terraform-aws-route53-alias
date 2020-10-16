@@ -37,12 +37,6 @@ variable "evaluate_target_health" {
   description = "Set to true if you want Route 53 to determine whether to respond to DNS queries"
 }
 
-variable "enabled" {
-  type        = bool
-  default     = true
-  description = "Set to false to prevent the module from creating any resources"
-}
-
 variable "ipv6_enabled" {
   type        = bool
   default     = false
