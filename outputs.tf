@@ -1,5 +1,5 @@
 output "hostnames" {
-  value       = try([for alias in var.aliases : aws_route53_record.default[alias].fqdn],[])
+  value       = try([for alias in var.aliases : aws_route53_record.default[alias].fqdn], [])
   description = "List of DNS records"
 }
 
