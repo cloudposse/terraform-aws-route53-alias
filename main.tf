@@ -6,9 +6,9 @@ data "aws_route53_zone" "default" {
 }
 
 resource "aws_route53_record" "default" {
-  count           = module.this.enabled ? length(compact(var.aliases)) : 0
+  for_each        = module.this.enabled ? toset(compact(var.aliases)) : []
   zone_id         = try(data.aws_route53_zone.default[0].zone_id, "")
-  name            = compact(var.aliases)[count.index]
+  name            = each.key
   allow_overwrite = var.allow_overwrite
   type            = "A"
 
@@ -20,9 +20,9 @@ resource "aws_route53_record" "default" {
 }
 
 resource "aws_route53_record" "ipv6" {
-  count           = module.this.enabled && var.ipv6_enabled ? length(compact(var.aliases)) : 0
+  for_each        = module.this.enabled && var.ipv6_enabled ? toset(compact(var.aliases)) : []
   zone_id         = try(data.aws_route53_zone.default[0].zone_id, "")
-  name            = compact(var.aliases)[count.index]
+  name            = each.key
   allow_overwrite = var.allow_overwrite
   type            = "AAAA"
 
