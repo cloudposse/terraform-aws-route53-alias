@@ -6,6 +6,8 @@ data "aws_route53_zone" "default" {
 }
 
 resource "aws_route53_record" "default" {
+  #bridgecrew:skip=BC_AWS_NETWORKING_60:All of the aliases are configurable via var.aliases and it is the user's responsibility to ensure that all of the resources are in the same account.
+  #bridgecrew:skip=BC_AWS_GENERAL_95:All of the aliases are configurable via var.aliases and it is the user's responsibility to ensure that all of the aliases point to resources and not just IPv4 addresses.
   count           = module.this.enabled ? length(compact(var.aliases)) : 0
   zone_id         = try(data.aws_route53_zone.default[0].zone_id, "")
   name            = compact(var.aliases)[count.index]
