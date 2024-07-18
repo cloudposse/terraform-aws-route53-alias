@@ -5,3 +5,4 @@ repository:
   description: Terraform Module to Define Vanity Host/Domain (e.g. `brand.com`) as an ALIAS record
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-modules, route53
+
